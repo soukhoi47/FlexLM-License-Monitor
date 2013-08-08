@@ -18,7 +18,7 @@ import MySQLdb
 ### change the connection information for your MySQL instance/database here
 ### this connection can be made with a read-only user
 def connectLicenseStorage():
-        return MySQLdb.connect(host='localhost', user='license', passwd='licenses', db='license')
+        return MySQLdb.connect(host='localhost', user='licences', passwd='licences', db='flex_monitor')
 ### end connection info
 
 def neatTime(dtime, short=False):
