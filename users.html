@@ -37,7 +37,7 @@ function selectUser(name){
 	}
 	$(".GroupData").css("display", "block");
 	$("#title").html(name);
-	$.getJSON('http://gis.rowan.edu/licenses/query_users.py?license=ArcInfo&user='+name+"&day="+day, function(data){
+	$.getJSON('http://localhost/licenses/query_users.py?license=ArcInfo&user='+name+"&day="+day, function(data){
 		$("#timed").html(data['time']);
 		$.each(data['log'], function(i){
 			ulog = data['log'][i];
