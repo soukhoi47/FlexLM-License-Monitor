@@ -27,10 +27,11 @@ cgitb.enable()
 q = {}
 form = cgi.FieldStorage()
 
-defaultSoftware = "ArcInfo" # default license to query
+defaultSoftware = "Abaqus" # default license to query
 
 # if there is some order to users' computer names, you can group them by prefix
-computer_groups = ['robilab301', 'robilab302', 'robilabgeo', 'robilab311', 'rcloud']
+#computer_groups = ['robilab301', 'robilab302', 'robilabgeo', 'robilab311', 'rcloud']
+computer_groups = []
 
 dLogDays = -30 # default number of days to return in the log, always negative
 dLogUntil = datetime.datetime.now()
