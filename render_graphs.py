@@ -16,7 +16,7 @@ basedir= "/var/www/FlexLM-License-Monitor/"
 imgdir = basedir
 rrddir = basedir + "monitor/rrd/"
 
-licenses = ['GISArcInfo', 'GISSpatial', 'GIS3D', 'GISNetwork', 'GISMaplex', 'CityEng']
+licenses = ['standard']
 tframes = {'24hours':300, '7days':2100, '1month':9000, '1year':109500} #key: text of timeframe, value: refresh rate
 period = '24hours'
 

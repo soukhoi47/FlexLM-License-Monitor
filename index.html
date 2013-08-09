@@ -15,10 +15,10 @@
 <input name="period" type="radio" value="1year"> Yearly
 <input type="submit" value="Switch View" onclick="setGraphs($('input:radio[name=period]:checked').val());"></p>
 </header>
-<img class="chart" id="GISArcInfo" src="/licenses/render_graphs.py?license=GISArcInfo&period=24hours" />
+<img class="chart" id="Abaqus" src="/licenses/render_graphs.py?license=Abaqus&period=24hours" />
 
-<h3><img src="./refresh.png" onclick="loadCurrentUsers('#UsersArcGIS', 'ArcInfo');" /> Users currently running ArcGIS Desktop:</h3>
-<div id="UsersArcGIS">No one is currently using the software.</div>
+<h3><img src="./refresh.png" onclick="loadCurrentUsers('#UsersAbaqus', 'AbaqusInfo');" /> Users currently running Abaqus:</h3>
+<div id="UsersAbaqus">No one is currently using the software.</div>
 
 <h2>ArcGIS Extensions</h2>
 <img class="chart" id="GISNetwork" src="/licenses/render_graphs.py?license=GISNetwork&period=24hours" />

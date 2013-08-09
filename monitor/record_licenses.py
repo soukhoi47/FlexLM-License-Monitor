@@ -25,7 +25,7 @@ import os, sys, string, rrdtool
 
 ### the values in the 'db' key constitute the names of the licenses used throughout this monitoring tool
 ### e.g. licenses = map(lambda x: x['db'], search)
-search = [ { 'term':"Users of ARC/INFO:", 'val':10, 'max':5, 'db':'GISArcInfo' },]
+search = [ { 'term':"Users of Abaqus:", 'val':10, 'max':5, 'db':'Abaqus' },]
 
 rrddir='/var/www/FlexLM-License-Monitor/monitor/rrd/'
 
