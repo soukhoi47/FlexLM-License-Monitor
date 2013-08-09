@@ -33,7 +33,7 @@ monitors = {"Abaqus": " /opt/abq/abq_lic/License/lmutil lmstat -a", \
 
 ### configure the license monitor db connection info here
 ### this is not using LicMonitor.py as this script makes changes to the DB
-conn = MySQLdb.connect(host='localhost', user='licences', passwd='licences', db='flex_monitor')
+conn = MySQLdb.connect(host='localhost', user='licenses', passwd='licenses', db='flex_monitor')
 cursor = conn.cursor()
 
 cursor.execute("""SELECT * FROM `flex_monitor`.`UsersOnline` WHERE STATUS = 1;""")

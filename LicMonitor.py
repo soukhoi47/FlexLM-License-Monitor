@@ -1,5 +1,6 @@
 ##  LicMonitor.py - common functions for the FlexLM License Monitor tool.
-##  Copyright (C) 2012 John Reiser, <reiser@rowan.edu>
+## last revised: 2013-08-09
+## author: Alexandre fork from John Reiser <reiser@rowan.edu>
 ##
 ##  This program is free software: you can redistribute it and/or modify
 ##  it under the terms of the GNU General Public License as published by
@@ -18,7 +19,7 @@ import MySQLdb
 ### change the connection information for your MySQL instance/database here
 ### this connection can be made with a read-only user
 def connectLicenseStorage():
-        return MySQLdb.connect(host='localhost', user='licences', passwd='licences', db='flex_monitor')
+        return MySQLdb.connect(host='localhost', user='licenses', passwd='licenses', db='flex_monitor')
 ### end connection info
 
 def neatTime(dtime, short=False):
