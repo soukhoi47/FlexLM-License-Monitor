@@ -27,7 +27,8 @@ users = {} # dict for user data
 ### key is the friendly name for the license server
 ### value is the path to the lmutil executable
 ### note that you can connect to a remote license server, see "AutoCAD" below, which is a remote license server
-monitors = {"Abaqus": " /opt/abq/abq_lic/License/lmutil lmstat -a"}#, \
+monitors = {"Abaqus": " /opt/abq/abq_lic/License/lmutil lmstat -a -c"}#, \
+print monitor
 ###		"AutoCAD": "/disk2/license/arcgis/license10.0/bin/lmutil lmstat -a -c @'license2.rowan.edu' -f 81000ESCSE_F" }
 
 ### configure the license monitor db connection info here
