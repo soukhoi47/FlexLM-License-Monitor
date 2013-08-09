@@ -25,14 +25,9 @@ import os, sys, string, rrdtool
 
 ### the values in the 'db' key constitute the names of the licenses used throughout this monitoring tool
 ### e.g. licenses = map(lambda x: x['db'], search)
-search = [ { 'term':"Users of ARC/INFO:", 'val':10, 'max':5, 'db':'GISArcInfo' },
-			{'term':"Users of Grid:", 'val':10, 'max':5, 'db':'GISSpatial' },
-			{'term':"Users of Maplex:", 'val':10, 'max':5, 'db':'GISMaplex' },
-			{'term':"Users of Network:", 'val':10, 'max':5, 'db':'GISNetwork' },
-			{'term':"Users of TIN:", 'val':10, 'max':5, 'db':'GIS3D' },
-			{'term':"Users of imess:", 'val':10, 'max':5, 'db':'Imagine' },
-			{'term':"Users of 81000ESCSE_F:", 'val':10, 'max':5, 'db':'AutoCAD' },] # autocad on license2
-rrddir='/var/www/html/licenses/monitor/rrd/'
+search = [ { 'term':"Users of ARC/INFO:", 'val':10, 'max':5, 'db':'GISArcInfo' },]
+
+rrddir='/var/www/FlexLM-License-Monitor/monitor/rrd/'
 
 for line in sys.stdin.readlines():
     for x in search:
