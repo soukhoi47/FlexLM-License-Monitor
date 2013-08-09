@@ -4,4 +4,4 @@
  /opt/abq/abq_lic/License/lmutil lmstat -a | /var/www/FlexLM-License-Monitor/monitor/record_licenses.py
 
 ### this updates your MySQL db
-/var/www/FlexLM-License-Monitor/monitor/track_users_mysql.py
+#/var/www/FlexLM-License-Monitor/monitor/track_users_mysql.py
