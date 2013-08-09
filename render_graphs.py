@@ -1,8 +1,8 @@
 #!/usr/bin/python
 
-## render_graphs.py, r03 - license monitor cgi/template
-## last revised: 2012-12-03
-## author: John Reiser <reiser@rowan.edu>
+## render_graphs.py, r04 - license monitor cgi/template
+## last revised: 2013-08-09
+## author: Alexandre fork from John Reiser <reiser@rowan.edu>
 ## updates rrdgraphs
 ## r03: creates graph file if it does not exist
 
@@ -12,8 +12,9 @@ import os, sys, cgi, time, rrdtool
 q = cgi.FieldStorage()
 
 url = "/licenses/" # with trailing slash
-imgdir = "/var/www/html/licenses/"
-rrddir = "/var/www/html/licenses/monitor/rrd/"
+basedir= "/var/www/FlexLM-License-Monitor/"
+imgdir = basedir
+rrddir = basedir + "monitor/rrd/"
 
 licenses = ['GISArcInfo', 'GISSpatial', 'GIS3D', 'GISNetwork', 'GISMaplex', 'CityEng']
 tframes = {'24hours':300, '7days':2100, '1month':9000, '1year':109500} #key: text of timeframe, value: refresh rate

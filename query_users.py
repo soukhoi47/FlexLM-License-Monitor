@@ -2,8 +2,8 @@
 
 ##  query_users.py - Script reads from mysql table, tabulates time on computer, etc
 ##  Revision: 02
-##  Last Revised: 2012-03-22
-##  Copyright (C) 2012 John Reiser, <reiser@rowan.edu>
+## last revised: 2013-08-09
+## author: Alexandre fork from John Reiser <reiser@rowan.edu>
 ##
 ##  This program is free software: you can redistribute it and/or modify
 ##  it under the terms of the GNU General Public License as published by
@@ -82,19 +82,19 @@ if "day" in form:
 	dLogBegin = (dLogUntil+datetime.timedelta(delta))
 
 if "computer" in q and "user" in q:
-	sql = """SELECT `time`, `action`, `computer` FROM `license`.`license_monitor` WHERE `computer` = '""" + \
+	sql = """SELECT `time`, `action`, `computer` FROM `flex_monitor`.`license_monitor` WHERE `computer` = '""" + \
 		q["computer"] + """' and `user` = '""" + q["user"] + """' and `license` = '""" + q["license"] + "';"
 elif "user" in q:
-	sql = """SELECT `time`, `action`, `computer` FROM `license`.`license_monitor` WHERE `user` = '""" + \
+	sql = """SELECT `time`, `action`, `computer` FROM `flex_monitor`.`license_monitor` WHERE `user` = '""" + \
 		q["user"] + """' and `license` = '""" + q["license"] + "' and `time` > '"+ dLogBegin.isoformat()+"' and `time` < '"+dLogUntil.isoformat()+"';"
 elif "group" in q:
-	sql = """SELECT `time`, `action`, `computer`, `user`, `uid` FROM `license`.`license_monitor` WHERE `computer` LIKE '""" + \
+	sql = """SELECT `time`, `action`, `computer`, `user`, `uid` FROM `flex_monitor`.`license_monitor` WHERE `computer` LIKE '""" + \
 		q["group"] + "%' and `license` = '""" + q["license"] + "';"
 elif "online" in q:
 	if q["online"] == 'now':
-		sql = """SELECT `time`, `user`, `computer`, `uid` FROM `license`.`UsersOnline` WHERE `license` = '""" + q["license"] + "' AND STATUS = 1;"
+		sql = """SELECT `time`, `user`, `computer`, `uid` FROM `flex_monitor`.`UsersOnline` WHERE `license` = '""" + q["license"] + "' AND STATUS = 1;"
 	if q["online"] == "date":
-		sql = """SELECT `time`, SUM(`action`) AS `action`, `user`, `computer`, `uid` FROM `license`.`license_monitor` WHERE `license` = '""" + q["license"] + "' and `time` > '"+ dLogBegin.isoformat()+"' and `time` < '"+dLogUntil.isoformat()+"' and `action` = 1 GROUP BY `uid`;"
+		sql = """SELECT `time`, SUM(`action`) AS `action`, `user`, `computer`, `uid` FROM `flex_monitor`.`license_monitor` WHERE `license` = '""" + q["license"] + "' and `time` > '"+ dLogBegin.isoformat()+"' and `time` < '"+dLogUntil.isoformat()+"' and `action` = 1 GROUP BY `uid`;"
 else:
 	sys.exit()
 

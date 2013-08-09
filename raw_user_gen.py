@@ -1,8 +1,8 @@
 #!/usr/bin/python2.6
 
 ##  raw_user_gen.py - Statistic Generation Script
-##  Last revised: 2012-03-22
-##  Copyright (C) 2012 John Reiser, <reiser@rowan.edu>
+## last revised: 2013-08-09
+## author: Alexandre fork from John Reiser <reiser@rowan.edu>
 ##
 ##  This program is free software: you can redistribute it and/or modify
 ##  it under the terms of the GNU General Public License as published by
@@ -41,7 +41,7 @@ print ",".join(["ID", "YEAR", "MONTH", "DAY", "DOW", "HOUR", "MIN", "ROWANCLOUD"
 while(timecursor < time.mktime(dLogUntil)):
 	timecursor = timecursor+300
 	
-	sql = """SELECT `time`, SUM(`action`) AS `STATUS`, `user`, `computer`, `uid` FROM `license`.`license_monitor` WHERE `license` = 'ArcInfo' and `time` > '""" + time.strftime("%Y-%m-%d %H:%M:%S", dLogBegin) + """' and `time` < '""" + time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(timecursor) ) + """' GROUP BY `uid`;"""
+	sql = """SELECT `time`, SUM(`action`) AS `STATUS`, `user`, `computer`, `uid` FROM `flex_monitor`.`license_monitor` WHERE `license` = 'ArcInfo' and `time` > '""" + time.strftime("%Y-%m-%d %H:%M:%S", dLogBegin) + """' and `time` < '""" + time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(timecursor) ) + """' GROUP BY `uid`;"""
 	cursor.execute(sql)
 
 	timetuple = time.gmtime(timecursor)
