@@ -25,14 +25,14 @@ import os, sys, string, cPickle, subprocess
 search = [{ 'term':") (gis.rowan.edu", 'name':0, 'computer':1, 'alt':2 }	]
 curid = [] # array for current IDs
 users = {} # dict for user data
-store = "/disk2/monitor/recent_users"
+store = "/var/www/FlexLM-License-Monitor/monitor/recent_users"
 
 if os.path.exists(store):
 	f = open(store, "r")
 	users = cPickle.load(f)
 	f.close()
 
-for line in os.popen("/disk2/license/arcgis/license10.0/bin/lmutil lmstat -f ARC/INFO").readlines():
+for line in os.popen("/opt/abq/abq_lic/License/lmutil lmstat -a").readlines():
 	for x in search:
 		if x[ 'term' ] in line:
 			cols = line.split()
